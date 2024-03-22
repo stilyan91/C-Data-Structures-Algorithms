@@ -1,6 +1,6 @@
-
 #include <stdio.h>
 
+// int x = 0; global variable ! if we use static or global this is same think.
 int fun(int n) {
 	static int x = 0;
 	if (n > 0)
