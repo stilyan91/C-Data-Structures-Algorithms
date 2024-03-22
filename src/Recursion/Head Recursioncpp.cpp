@@ -17,3 +17,6 @@ int main() {
 	fun(3);
 	return 0;
 }
+
+// The first statement in the recursive function is recursive call. There is nothing before the recursive call.
+// Everything is done in returning time.
