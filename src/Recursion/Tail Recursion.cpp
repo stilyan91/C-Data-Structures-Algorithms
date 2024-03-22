@@ -17,3 +17,5 @@ int main() {
 	fun(3);
 	return 0;
 }
+
+// recursion where there is nothing after calling itself.Nothing will be performed on returning time.
