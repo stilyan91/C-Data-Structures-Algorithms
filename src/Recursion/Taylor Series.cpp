@@ -7,22 +7,20 @@ double e(int x, int n) {
 	double r;
 	if (n == 0)
 		return 1;
-	
+
 	r = e(x, n - 1);
 	p = p * x;
 	f = f * n;
-	return r + p /f;
+	return r + p / f;
 
 }
-
-
 
 using namespace std;
 
 
 int main() {
 
-	printf("%lf \n", e(4, 15));
+	printf("%lf \n", e(1, 10));
 
 
 	return 0;
