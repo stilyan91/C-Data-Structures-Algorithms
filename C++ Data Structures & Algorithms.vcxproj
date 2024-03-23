@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\Array\array.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Recursion\Head Recursioncpp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
