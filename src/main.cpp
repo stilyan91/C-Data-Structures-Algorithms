@@ -1,23 +1,33 @@
 #include <stdio.h>
 
-int fun(int n);
+int sum(int n);
 
-int fun(int n) {
-	if (n > 100)
+int sum(int n) {
+	if (n == 0)
 	{
-		return n - 10;
+		return  0;
 	}
 	else
-		return fun(fun(n + 11));
+		return sum(n - 1) + n;
 }
 
+int Isum(int n) {
+	int s = 0;
+	int i;
+	for (i = 1; i <= n; i++) {
+		s = s + i;
+	}
+	return s;
+}
 
 using namespace std;
 
 
 int main() {
 
-	printf("%d ",fun(95));
+	int r = sum(5);
+	printf("%d ",r);
+
 
 	return 0;
 }
