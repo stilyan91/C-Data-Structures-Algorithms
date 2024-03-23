@@ -14,7 +14,7 @@ int pow(int m, int n) {
 	if (n % 2 == 0)
 		return pow(m * m, n / 2);
 	else
-		return m * pow(m * m,(n - 1) / 2);
+		return m * pow(m * m, (n - 1) / 2);
 }
 
 using namespace std;
@@ -22,8 +22,8 @@ using namespace std;
 
 int main() {
 
-	int r = power(2,9);
-	printf("%d ",r);
+	int r = power(2, 9);
+	printf("%d ", r);
 
 
 	return 0;
