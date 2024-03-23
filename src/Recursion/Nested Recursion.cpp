@@ -17,7 +17,7 @@ using namespace std;
 
 int main() {
 
-	printf("%d ",fun(95));
+	printf("%d ", fun(95));
 
 	return 0;
 }
