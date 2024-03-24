@@ -3,9 +3,15 @@
 // Taylor series C^x using Horner's Rule;
 // iteration
 double e(int x, int n) {
-	int s = 1;
-	for (; n > 0; n--) {
-		s = 1 + x / n;
+	double s = 1;
+	int i;
+	double num = 1;
+	double den = 1;
+
+	for (i = 1; i < n; i++) {
+		n *= x;
+		den *= i;
+		s += num / den;
 	}
 	return s;
 }

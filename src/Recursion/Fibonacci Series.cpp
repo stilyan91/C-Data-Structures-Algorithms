@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Fibonacci series
-int F [10];
+int F[10];
 int rfib(int n) {
 
 	if (n <= 1)
@@ -15,14 +15,14 @@ int rfib(int n) {
 		if (F[n - 1] == -1)
 			F[n - 1] = rfib(n - 1);
 
-		return rfib(n-2)+rfib(n-1);
+		return rfib(n - 2) + rfib(n - 1);
 	}
 }
 
 // Iteration
 
 int fibI(int n) {
-	int t0= 0, t1 = 1, s=0;
+	int t0 = 0, t1 = 1, s = 0;
 	if (n <= 1) return n;
 	for (int i = 2; i <= n; i++) {
 		s = t0 + t1;
