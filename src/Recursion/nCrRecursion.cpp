@@ -7,7 +7,7 @@ int fac(int n) {
 	if (n == 0)return 1;
 	return fac(n - 1) * n;
 
-	}
+}
 
 
 // Simple function
@@ -15,7 +15,7 @@ int fac(int n) {
 int C(int n, int r) {
 	int num, dem;
 	num = fac(n);
-	dem = fac(r) * fac(n-r);
+	dem = fac(r) * fac(n - r);
 
 	return num / dem;
 }

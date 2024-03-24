@@ -14,7 +14,7 @@ int rfib(int n) {
 			F[n - 2] = rfib(n - 2);
 		if (F[n - 1] == -1)
 			F[n - 1] = rfib(n - 1);
-
+		F[n] = F[n - 2] + F[n - 1];
 		return rfib(n - 2) + rfib(n - 1);
 	}
 }
