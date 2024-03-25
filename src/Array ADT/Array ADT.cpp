@@ -36,6 +36,6 @@ int main() {
 	arr.lenght = n;
 
 	Display(arr);
-	
+
 	return 0;
 }
