@@ -40,6 +40,6 @@ int main() {
 	Append(&arr, 10);
 	Insert(&arr, 2, 10);
 	Display(arr);
-	
+
 	return 0;
 }
