@@ -38,7 +38,7 @@ int Delete(struct Array* arr, int index) {
 		int x = arr->A[index];
 		for (int i = index; i < arr->lenght - 1; i++) {
 			arr->A[i] = arr->A[i + 1];
-			}
+		}
 		arr->lenght--;
 		return x;
 	}
@@ -53,6 +53,6 @@ int main() {
 	Insert(&arr, 2, 10);
 	printf("%d\n", Delete(&arr, 0));
 	Display(arr);
-	
+
 	return 0;
 }
