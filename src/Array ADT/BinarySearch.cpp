@@ -38,39 +38,14 @@ int Delete(struct Array* arr, int index) {
 		int x = arr->A[index];
 		for (int i = index; i < arr->lenght - 1; i++) {
 			arr->A[i] = arr->A[i + 1];
-			}
+		}
 		arr->lenght--;
 		return x;
 	}
 	return 0;
 }
 
-int LinearSearch(struct Array arr, int key) {
-	for (int i = 0; i < arr.lenght; i++)
-	{
-		if (arr.A[i] == key)
-			return i;
-	}
-	return -1;
-}
 
-void swap(int* x, int* y) {
-	int temp;
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
-
-int ILinearSearch(struct Array* arr, int key) {
-	for (int i = 0; i < arr->lenght; i++) {
-		if (arr->A[i] == key) {
-			//swap(&arr->A[i], &arr->A[0); swap with 0
-			swap(&arr->A[i], &arr->A[i - 1]); // swap with previous element;
-			return i;
-		}
-	}
-	return -1;
-}
 
 int BinarySearch(struct Array& arr, int key) {
 	int l = 0, h = arr.lenght - 1;
@@ -81,7 +56,7 @@ int BinarySearch(struct Array& arr, int key) {
 			return mid;
 		}
 		else if (key < arr.A[mid])
-			 h = mid - 1;
+			h = mid - 1;
 		else
 			l = mid + 1;
 	}
@@ -93,7 +68,7 @@ int RBinarySearch(int arr[], int l, int h, int key) {
 	if (l <= h)
 	{
 		mid = (l + h) / 2;
-		if (key == arr[mid])
+		if (key = arr[mid])
 			return mid;
 		else if (key < arr[mid])
 			return RBinarySearch(arr, l, mid - 1, key);
@@ -109,8 +84,7 @@ int main() {
 
 	//printf("%d\n", Delete(&arr, 0));
 	// printf("%d\n", BinarySearch(arr, 5));
-	printf("%d\n", LinearSearch(arr, 5));
-	printf("%d\n", RBinarySearch(arr.A,0, arr.lenght,5));
+	printf("%d\n", RBinarySearch(arr.A, 0, arr.lenght, 5));
 	Display(arr);
 	return 0;
 }

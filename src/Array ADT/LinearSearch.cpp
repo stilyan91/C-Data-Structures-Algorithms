@@ -38,7 +38,7 @@ int Delete(struct Array* arr, int index) {
 		int x = arr->A[index];
 		for (int i = index; i < arr->lenght - 1; i++) {
 			arr->A[i] = arr->A[i + 1];
-			}
+		}
 		arr->lenght--;
 		return x;
 	}
@@ -81,7 +81,7 @@ int BinarySearch(struct Array& arr, int key) {
 			return mid;
 		}
 		else if (key < arr.A[mid])
-			 h = mid - 1;
+			h = mid - 1;
 		else
 			l = mid + 1;
 	}
@@ -110,7 +110,7 @@ int main() {
 	//printf("%d\n", Delete(&arr, 0));
 	// printf("%d\n", BinarySearch(arr, 5));
 	printf("%d\n", LinearSearch(arr, 5));
-	printf("%d\n", RBinarySearch(arr.A,0, arr.lenght,5));
+	printf("%d\n", RBinarySearch(arr.A, 0, arr.lenght, 5));
 	Display(arr);
 	return 0;
 }
