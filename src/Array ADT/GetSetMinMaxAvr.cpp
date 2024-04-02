@@ -38,7 +38,7 @@ int Delete(struct Array* arr, int index) {
 		int x = arr->A[index];
 		for (int i = index; i < arr->lenght - 1; i++) {
 			arr->A[i] = arr->A[i + 1];
-			}
+		}
 		arr->lenght--;
 		return x;
 	}
@@ -81,7 +81,7 @@ int BinarySearch(struct Array& arr, int key) {
 			return mid;
 		}
 		else if (key < arr.A[mid])
-			 h = mid - 1;
+			h = mid - 1;
 		else
 			l = mid + 1;
 	}
@@ -143,7 +143,7 @@ int Sum(struct Array* arr) {
 }
 
 float Average(struct Array arr) {
-	return (float) Sum(&arr) / arr.lenght;
+	return (float)Sum(&arr) / arr.lenght;
 }
 
 int main() {
@@ -151,7 +151,7 @@ int main() {
 	// struct Array arr = { {2,3,4,5,6},10,5 };
 	struct Array arr = { {8,3,9,15,6,10,7,2,12,4},10,10 };
 	//Set(&arr, 5, 11);
-	printf("%f\n",Average(arr));
+	printf("%f\n", Average(arr));
 	Display(arr);
 	return 0;
 }
