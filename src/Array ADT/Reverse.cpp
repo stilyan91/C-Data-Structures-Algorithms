@@ -38,7 +38,7 @@ int Delete(struct Array* arr, int index) {
 		int x = arr->A[index];
 		for (int i = index; i < arr->lenght - 1; i++) {
 			arr->A[i] = arr->A[i + 1];
-			}
+		}
 		arr->lenght--;
 		return x;
 	}
@@ -81,7 +81,7 @@ int BinarySearch(struct Array& arr, int key) {
 			return mid;
 		}
 		else if (key < arr.A[mid])
-			 h = mid - 1;
+			h = mid - 1;
 		else
 			l = mid + 1;
 	}
@@ -143,7 +143,7 @@ int Sum(struct Array* arr) {
 }
 
 float Average(struct Array arr) {
-	return (float) Sum(&arr) / arr.lenght;
+	return (float)Sum(&arr) / arr.lenght;
 }
 
 void Reverse(struct Array* arr) {
@@ -170,7 +170,7 @@ void Reverse2(struct Array* arr) {
 
 void leftRotate(struct Array* arr) {
 	int temp = arr->A[0];
-	for (int i = 1; i < arr->lenght-1; i++) {
+	for (int i = 1; i < arr->lenght - 1; i++) {
 		arr->A[i - 1] = arr->A[i];
 	}
 	arr->A[arr->lenght - 1] = temp;
