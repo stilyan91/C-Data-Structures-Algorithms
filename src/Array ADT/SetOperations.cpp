@@ -38,7 +38,7 @@ int Delete(struct Array* arr, int index) {
 		int x = arr->A[index];
 		for (int i = index; i < arr->lenght - 1; i++) {
 			arr->A[i] = arr->A[i + 1];
-			}
+		}
 		arr->lenght--;
 		return x;
 	}
@@ -81,7 +81,7 @@ int BinarySearch(struct Array& arr, int key) {
 			return mid;
 		}
 		else if (key < arr.A[mid])
-			 h = mid - 1;
+			h = mid - 1;
 		else
 			l = mid + 1;
 	}
@@ -143,7 +143,7 @@ int Sum(struct Array* arr) {
 }
 
 float Average(struct Array arr) {
-	return (float) Sum(&arr) / arr.lenght;
+	return (float)Sum(&arr) / arr.lenght;
 }
 
 void Reverse(struct Array* arr) {
@@ -170,7 +170,7 @@ void Reverse2(struct Array* arr) {
 
 void leftRotate(struct Array* arr) {
 	int temp = arr->A[0];
-	for (int i = 1; i < arr->lenght-1; i++) {
+	for (int i = 1; i < arr->lenght - 1; i++) {
 		arr->A[i - 1] = arr->A[i];
 	}
 	arr->A[arr->lenght - 1] = temp;
@@ -213,8 +213,8 @@ void Rearrange(struct Array* arr) {
 	}
 }
 
-struct Array * Merge(struct Array* arr1, struct Array* arr2) {
-	int i, j,k;
+struct Array* Merge(struct Array* arr1, struct Array* arr2) {
+	int i, j, k;
 	i = j = k = 0;
 	struct Array* arr3 = (struct Array*)malloc(sizeof(struct Array));
 
@@ -248,7 +248,7 @@ struct Array* Union(struct Array* arr1, struct Array* arr2) {
 		if (arr1->A[i] < arr2->A[j]) {
 			arr3->A[k++] = arr1->A[i++];
 		}
-		else if(arr2->A[j] < arr1->A[i]) {
+		else if (arr2->A[j] < arr1->A[i]) {
 			arr3->A[k++] = arr2->A[j++];
 		}
 		else {
@@ -280,7 +280,7 @@ struct Array* Intersection(struct Array* arr1, struct Array* arr2) {
 		else if (arr2->A[j] < arr1->A[i]) {
 			j++;
 		}
-		else if(arr1->A[i]==arr2->A[j]) 
+		else if (arr1->A[i] == arr2->A[j])
 		{
 			arr3->A[k++] = arr1->A[i++];
 			j++;
@@ -309,12 +309,12 @@ struct Array* Difference(struct Array* arr1, struct Array* arr2) {
 		}
 
 	}
-		for (; i < arr1->lenght; i++)
-			arr3->A[k++] = arr1->A[i];
+	for (; i < arr1->lenght; i++)
+		arr3->A[k++] = arr1->A[i];
 
-		arr3->lenght = k;
-		arr3->size = 10;
-	
+	arr3->lenght = k;
+	arr3->size = 10;
+
 	return arr3;
 }
 
