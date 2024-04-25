@@ -319,15 +319,28 @@ struct Array* Difference(struct Array* arr1, struct Array* arr2) {
 }
 
 
+
 int main() {
+	int A[10] = { 3,6,8,8,10,12,15,15,15,20};
 
-	struct Array arr1 = { {2,6,10,15,25},10,5 };
-	struct Array arr2 = { {3,6,7,15,20},10,5 };
-	struct Array* arr3;
+	int n = 10;
+	int lastDuplicate = 0;
 
-	arr3 = Difference(&arr1, &arr2);
+	for (int i = 0; i < n; i++) {
+		if (A[i] == A[i + 1] && A[i] != lastDuplicate)
+		{
+			printf("%d\n", A[i]);
+			lastDuplicate = A[i];
+		}
+	}
 
-	Display(*arr3);
-
+	for (int i = 0; i < n - 1; i++) {
+		if (A[i] == A[i + 1]) {
+			int j = i + 1;
+			while (A[j] == A[i])j++;
+			printf("%d is appearing %d times\n", A[i], j - i);
+			i = j - 1;
+		}
+	}
 	return 0;
 }
