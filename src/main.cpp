@@ -321,19 +321,8 @@ struct Array* Difference(struct Array* arr1, struct Array* arr2) {
 
 
 int main() {
-	int A[10] = { 8,3,6,4,6,5,8,2,7};
-	int n = 10;
-	int H[9] = { 0 };
-
-	for (int i = 0; i < n; i++) {
-		H[A[i]]++;
-	}
-
-	for (int i = 0; i < 9; i++) {
-		if (H[i] > 1) {
-			printf("%d -> %d\n", i, H[i]);
-		}
-	}
+	const int n = 10;
+	int A[n] = { 5,8,3,9,6,2,10,-1,4 };
 	
 	return 0;
 }
