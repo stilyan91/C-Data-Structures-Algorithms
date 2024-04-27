@@ -321,26 +321,19 @@ struct Array* Difference(struct Array* arr1, struct Array* arr2) {
 
 
 int main() {
-	int A[10] = { 3,6,8,8,10,12,15,15,15,20};
-
+	int A[10] = { 8,3,6,4,6,5,8,2,7};
 	int n = 10;
-	int lastDuplicate = 0;
+	int H[9] = { 0 };
 
 	for (int i = 0; i < n; i++) {
-		if (A[i] == A[i + 1] && A[i] != lastDuplicate)
-		{
-			printf("%d\n", A[i]);
-			lastDuplicate = A[i];
-		}
+		H[A[i]]++;
 	}
 
-	for (int i = 0; i < n - 1; i++) {
-		if (A[i] == A[i + 1]) {
-			int j = i + 1;
-			while (A[j] == A[i])j++;
-			printf("%d is appearing %d times\n", A[i], j - i);
-			i = j - 1;
+	for (int i = 0; i < 9; i++) {
+		if (H[i] > 1) {
+			printf("%d -> %d\n", i, H[i]);
 		}
 	}
+	
 	return 0;
 }
