@@ -329,11 +329,29 @@ int valid(char* name){
 	return 1;
 }
 
+bool isPalindrome(char* A) {
+	int i, j;
+	for (j = 0; A[j] != '\0'; j++) {}
+	j--;
+	for (i = 0; i < j; i++, j--) {
+		if (A[i] != A[j])
+			return false;
+	}
+	return true;
+}
 int main() {
-	char name[] = "proba";
-	if (valid(name))
-		printf("Valid string");
-	else
-		printf("Invalid string");
+	
+	char A[] = "finding";
+	long H = 0,x =0;
+	for (int i = 0; A[i] != '\0'; i++) {
+		x = 1;
+		x = x << (A[i] - 97);
+		if ((x & H) > 0) {
+			printf("%c is duplicated\n", A[i]);
+		}
+		else
+			H = x | H;
+	}
+	
 	return 0;
 }
