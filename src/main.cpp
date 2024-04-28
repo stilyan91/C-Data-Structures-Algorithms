@@ -319,22 +319,21 @@ struct Array* Difference(struct Array* arr1, struct Array* arr2) {
 }
 
 
+int valid(char* name){
+	for (int i = 0; name[i] != '\0'; i++) {
+		if (!(name[i] >= 65 && name[i] <= 90) && 
+			!(name[i] >= 97 && name[i] <= 122) && 
+			!(name[i] < 48 && name[i] > 57))
+				return 0;
+	}
+	return 1;
+}
 
 int main() {
-	const int n = 10;
-	int A[n] = { 5,8,3,9,6,2,10,-1,4 };
-
-	int min = A[0];
-	int max = A[0];
-
-	for (int i = 1; i < n; i++) {
-		if (A[i] < min)
-			min = A[i];
-		else if (A[i] > max)
-			max = A[i];
-	}
-
-	printf("min = %d\nmax = %d\n", min, max);
-
+	char name[] = "proba";
+	if (valid(name))
+		printf("Valid string");
+	else
+		printf("Invalid string");
 	return 0;
 }
