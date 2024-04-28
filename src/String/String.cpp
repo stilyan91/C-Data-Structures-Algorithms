@@ -223,7 +223,69 @@ int main() {
 	if (B[i] == '\0')
 		printf("It is Anagram");
 
-	// Permutation of string
+	// Permutation of string 
+	// number of possible permutations are !n (factorial)
+	// Recursion -> Backtracking -> Brute force
+	// first method
+	void perm(char S[], int k) {
+		static int A[10] = { 0 };
+		static int Res[10];
+		int i;
+		if (S[k] == '\0')
+		{
+			Res[k] = '\0';
+			for (int j = 0; j != k; j++) {
+				printf("%c", Res[j]);
+			}
+			printf("\n");
+		}
+		else {
+			for (i = 0; S[i] != '\0'; i++) {
+				if (A[i] == 0) {
+					Res[k] = S[i];
+					A[i] = 1;
+					perm(S, k + 1);
+					A[i] = 0;
+				}
+			}
+		}
+	}
+
+	int main() {
+
+		char S[] = "ABC";
+
+		perm(S, 0);
+
+	// second method
+		void swap(char* i, char* y) {
+			char t;
+			t = *i;
+			*i = *y;
+			*y = t;
+		}
+		void perm2(char S[], int l, int h) {
+			int i;
+
+			if (l == h)
+			{
+				printf("%s\n", S);
+			}
+			else {
+				for (i = l; i <= h; i++) {
+
+					swap(&S[l], &S[i]);
+					perm2(S, l + 1, h);
+					swap(&S[l], &S[i]);
+				}
+			}
+		}
+
+		int main() {
+
+			char S[] = "ABC";
+
+			perm2(S, 0, 2);
 
 	return 0;
 }

@@ -339,26 +339,59 @@ bool isPalindrome(char* A) {
 	}
 	return true;
 }
-int main() {
-	
-	char A[] = "verbose";
-	char B[] = "observe";
 
-	int i, H[26]{ 0 };
-
-	for (i = 0; A[i] != '\0'; i++) {
-		H[A[i] - 97]++;
+void perm(char S[], int k) {
+	static int A[10] = { 0 };
+	static int Res[10];
+	int i;
+	if(S[k] == '\0')
+	{
+		Res[k] = '\0';
+		for (int j = 0; j!=k; j++) {
+			printf("%c",Res[j]);
+		}
+		printf("\n");
 	}
-
-	for (i = 0; B[i] != '\0'; i++) {
-		H[B[i] - 97]--;
-		if (H [B[i] - 97] < 0)
-		{
-			printf("Not anagram");
-			break;
+	else {
+		for (i = 0; S[i] != '\0'; i++) {
+			if (A[i] == 0) {
+				Res[k] = S[i];
+				A[i] = 1;
+				perm(S, k + 1);
+				A[i] = 0;
+			}
 		}
 	}
-	if (B[i] == '\0')
-		printf("It is Anagram");
+}
+
+void swap(char * i, char*y) {
+	char t;
+	t = *i;
+	*i = *y;
+	*y = t;
+}
+void perm2(char S[], int l, int h) {
+	int i;
+
+	if(l==h)
+	{
+		printf("%s\n", S);
+	}
+	else {
+		for (i = l; i <= h; i++) {
+
+			swap(&S[l], &S[i]);
+			perm2(S, l + 1, h);
+			swap(&S[l], &S[i]);
+		}
+	}
+}
+
+int main() {
+	
+	char S[] = "ABC";
+	
+	perm2(S,0,2);
+
 	return 0;
 }
